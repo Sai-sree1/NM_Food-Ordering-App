@@ -1,6 +1,6 @@
 
 
-# V FOOD-ORDER-APP-MAS
+# V FOOD-ORDER-APP
 
 ## Project Overview
 
@@ -68,7 +68,7 @@ V FOOD-ORDER-APP-MAS/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/V-FOOD-ORDER-APP-MAS.git
+git clone https://github.com/Sai-sree1/NM_Food-Ordering-App.git
 cd V-FOOD-ORDER-APP-MAS
 ```
 
