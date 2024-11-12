@@ -168,8 +168,8 @@ npm run build
 ```bash
 npm run start
 ```
-
-![preview](https://github.com/user-attachments/assets/216cf036-9985-4f46-ad00-cebda4afd586)
+## Output
+![preview](https://github.com/user-attachments/assets/1bccf898-f36e-4c4a-957b-28c09448f843)
 
 ## Technologies Used
 
