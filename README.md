@@ -1,82 +1,56 @@
 
-
-# V FOOD-ORDER-APP
+# MERN-RESTAURANT-APP
 
 ## Project Overview
-
-`V FOOD-ORDER-APP-MAS` is a comprehensive food ordering application that includes a **client-side** (Vue.js) for customers, an **admin panel** for restaurant management, and a **Node.js backend** with MongoDB integration. The project supports multiple features like product management, order processing, authentication, and Razorpay integration for payments.
+**MERN-RESTAURANT-APP** is a comprehensive full-stack restaurant application built using Next.js (a React framework), Node.js, Express.js, and MongoDB. The project includes a server setup with Node.js for backend functionality and TailwindCSS for modern and responsive styling. 
 
 ## Project Structure
-
 ```
-V FOOD-ORDER-APP-MAS/
+MERN-RESTAURANT-APP/
 ├── .env                         # Environment variables
 ├── .gitignore                   # Git ignore file
-├── babel.config.js              # Babel configuration
-├── nodemon.json                 # Nodemon configuration
-├── package.json                 # Project dependencies
 ├── README.md                    # Project documentation (this file)
-├── vue.config.js                # Vue CLI configuration
 │
-├── client/                      # Frontend (Vue.js)
+├── backend/                     # Backend (Node.js, Express.js)
+│   ├── config/                  # Backend configuration
+│   ├── controllers/             # Route controllers
+│   ├── models/                  # Database models (MongoDB)
+│   ├── routes/                  # API routes
+│   └── server.js                # Entry point for the backend
+│
+├── frontend/                    # Frontend (Next.js)
 │   ├── public/                  # Static assets
-│   └── src/                     # Vue.js source files
-│
-├── config/                      # Backend configuration
-│   ├── admin.js                 # Admin configuration
-│   ├── db.js                    # MongoDB connection
-│   └── razorpay.js              # Razorpay integration
-│
-├── middleware/                  # Custom middleware
-│   ├── auth.js                  # Authentication middleware
-│   └── paginate.js              # Pagination helper
-│
-├── models/                      # Database models
-│   ├── Order.js                 # Order model
-│   ├── Product.js               # Product model
-│   └── User.js                  # User model
-│
-├── routes/                      # Express routes
-│   ├── admin/                   # Admin routes
-│   ├── api/                     # API routes for client
-│   └── auth/                    # Authentication routes
-│
-├── tests/                       # Test cases
-│   ├── unit/                    # Unit tests
-│   └── integration/             # Integration tests
-│
-└── server.js                    # Entry point for the backend
+│   ├── pages/                   # Next.js pages
+│   ├── components/              # Reusable components
+│   ├── styles/                  # CSS and Tailwind styles
+│   └── next.config.js           # Next.js configuration
 ```
 
 ## Features
-
-- **User Authentication**: JWT-based login and registration.
-- **Admin Panel**: Product and order management.
-- **Product Catalog**: Browse and search menu items.
-- **Order Management**: Place orders, view order status.
-- **Payment Integration**: Razorpay for secure transactions.
-- **Pagination**: Efficient API responses with pagination.
-
+- **User Authentication**: Secure login and registration with JWT.
+- **Product Catalog**: Browse and search for restaurant menu items.
+- **Order Management**: Place and track orders.
+- **Admin Panel**: Manage menu items and orders.
+- **Responsive Design**: Modern UI with TailwindCSS.
+- **Database Management**: MongoDB for storing product and order details.
+  
 ## Installation
 
 ### Prerequisites
-
 - **Node.js** (v14+)
 - **MongoDB** (local or MongoDB Atlas)
-- **Vue CLI** (for frontend)
+- **Next.js** (for frontend)
 
 ### 1. Clone the Repository
-
 ```bash
-git clone https://github.com/Sai-sree1/NM_Food-Ordering-App.git
-cd V-FOOD-ORDER-APP-MAS
+git clone https://github.com/your-repository-link/MERN-Restaurant-App.git
+cd MERN-RESTAURANT-APP
 ```
 
 ### 2. Set Up Environment Variables
-
 Create a `.env` file in the root directory:
 
-```
+```plaintext
 # General
 PORT=5000
 
@@ -85,100 +59,89 @@ MONGODB_URI=your_mongodb_connection_string
 
 # JWT Secret
 JWT_SECRET=your_jwt_secret
-
-# Razorpay
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_SECRET=your_razorpay_secret
 ```
 
 ### 3. Install Backend Dependencies
-
 ```bash
+cd backend
 npm install
 ```
 
 ### 4. Run the Backend Server
-
 ```bash
 npm start
 # or
 npm run dev   # For development with Nodemon
 ```
 
-### 5. Navigate to the Client Folder and Install Frontend Dependencies
-
+### 5. Navigate to the Frontend Folder and Install Dependencies
 ```bash
-cd client
+cd ../frontend
 npm install
 ```
 
 ### 6. Start the Frontend Server
-
 ```bash
-npm run serve
+npm run dev
 ```
 
 ## API Endpoints
 
 ### Authentication
-
-- **POST** `/auth/register`: Register a new user
-- **POST** `/auth/login`: Login for existing users
+- **POST** `/api/auth/register`: Register a new user
+- **POST** `/api/auth/login`: Login for existing users
 
 ### Products
-
-- **GET** `/api/products`: Fetch all products with pagination
-- **POST** `/admin/products`: Create a new product (Admin only)
-- **PUT** `/admin/products/:id`: Update product details (Admin only)
-- **DELETE** `/admin/products/:id`: Delete a product (Admin only)
+- **GET** `/api/products`: Fetch all products
+- **POST** `/api/products`: Create a new product (Admin only)
+- **PUT** `/api/products/:id`: Update product details (Admin only)
+- **DELETE** `/api/products/:id`: Delete a product (Admin only)
 
 ### Orders
-
 - **POST** `/api/orders`: Place a new order
 - **GET** `/api/orders/:id`: Get order details by ID
-- **GET** `/admin/orders`: Get all orders (Admin only)
-
-### Payments
-
-- **POST** `/api/payments/razorpay`: Create a Razorpay order
+- **GET** `/api/admin/orders`: Get all orders (Admin only)
 
 ## MongoDB Setup
-
-If you are using MongoDB locally, make sure MongoDB is running on your system:
+For a local setup, ensure MongoDB is running:
 
 ```bash
 mongod
 ```
 
-For MongoDB Atlas, use your connection string in the `.env` file.
-
-
+For **MongoDB Atlas**, use your connection string in the `.env` file.
 
 ## Deployment
 
 ### Build for Production
-
 ```bash
-cd client
+cd frontend
 npm run build
 ```
 
 ### Start Production Server
-
 ```bash
 npm run start
 ```
+
 ## Output
-![preview](https://github.com/user-attachments/assets/1bccf898-f36e-4c4a-957b-28c09448f843)
+
+![Screenshot (19)](https://github.com/user-attachments/assets/86183ed7-91a5-4304-a408-2629ccd919c3)
+![Screenshot (18)](https://github.com/user-attachments/assets/2b5a6be8-e5ee-4041-b739-3fb09b7a8cc7)
+![Screenshot (21)](https://github.com/user-attachments/assets/006e230a-b651-47d8-939e-b827800a3377)
+![Screenshot (20)](https://github.com/user-attachments/assets/c5b0b2f8-7da1-43b6-95f2-4634ac267013)
+
 
 ## Technologies Used
-
-- **Frontend**: Vue.js, Bootstrap
+- **Frontend**: Next.js, TailwindCSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB, Mongoose
 - **Authentication**: JWT
-- **Payment Gateway**: Razorpay
 - **Testing**: Jest
+
+
+
+
 
 
 
